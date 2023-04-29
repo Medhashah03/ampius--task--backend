@@ -1,4 +1,5 @@
 #generics is used to create views with HTTP response
+#making necessary imports
 from rest_framework import generics
 from .models import Worker
 from .serializers import WorkerSerializer

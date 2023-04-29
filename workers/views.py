@@ -5,35 +5,20 @@ from .serializers import WorkerSerializer
 from django.shortcuts import render 
 from django.http import HttpResponse ,request
 
-import json
- 
-
+#view to create a worker
 class Workers(generics.CreateAPIView):
     worker_data = Worker.objects.all()
     serializer_class = WorkerSerializer
 
+#view to get all workerslist
 class WorkerListView(generics.ListAPIView):
     queryset = Worker.objects.all()
     serializer_class = WorkerSerializer
 
+#to display all the data on a webpage
+def display_workers(request):
+   
+    workers = Worker.objects.all()
+    context = {'workers': workers}
+    return render(request, 'index.html', context)
 
-# def new(request):
-#     if request.method == 'POST': 
-#         #try:
-#         worker = request.POST.get('worker') 
-#             #count+=1
-#         #except:
-#             #worker = 'john'
-    
-        
-    
-#     worker_data = Worker.objects.get(name = worker)
-#     worker_age = worker_data.age
-#     context = {  
-#             'name': worker_data.name ,
-#             'age' : worker_age  ,
-
-#         }
-    
- 
-#     return render(request, 'home.html', context)   

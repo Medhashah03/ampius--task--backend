@@ -1,0 +1,81 @@
+<!DOCTYPE html>  
+<html lang="en">  
+{% load static %}  
+  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"  
+    integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="  
+    crossorigin="anonymous" />  
+  <style>
+    table {
+      padding : 20px;
+      border : 10px ;
+      background-color: aliceblue;
+
+    }
+    th {
+      padding : 30px;
+
+    }
+    tr {
+      padding : 60px;
+      
+    }
+    body {
+      background-color: rgb(148, 205, 205);
+
+    }
+    h1 {
+      color :black;
+    }
+  </style>
+  <title>Workers</title>  
+</head>  
+  
+<body >  
+   
+  <br /><br /> <br>  
+  <div id="jumbotron" class="jumbotron" style="text-align: center; margin-top:-50px">  
+    <h1 class="display-4">Workers App </h1>  
+    <h5></h5>  
+  </div>  
+  
+  
+ 
+    <h1>All Workers</h1>
+    <br></br>
+    <table >
+      <thead>
+        <tr>
+          <th>  Name</th>
+          <th>  Age</th>
+          <th>  Address</th>
+          <th>  Contact info</th>
+          <th>  Safery_breaches</th>
+          <th>  blood_Group</th>
+          <th>  health problems</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for worker in workers %}
+          <tr>
+            <td>{{ worker.name }}</td>
+            <td>{{ worker.age }}</td>
+            <td>{{ worker.address }}</td>
+            <td>{{ worker.contact_info }}</td>
+            <td>{{ worker.safety_breaches }}</td>
+            <td>{{ worker.blood_group }}</td>
+            <td>{{ worker.health_problems}}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="4">No workers found.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</body>  
+  
+</html>  

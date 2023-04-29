@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from workers.views import Workers, WorkerListView,display_workers
+from workers.views import Workers, WorkerListView,display_workers,video_feed,index,stream
 urlpatterns = [
+    path("",index,name=""),
     path('admin/', admin.site.urls),
     path('workers/', WorkerListView.as_view(), name='worker_list'),
     path('workers/create/', Workers.as_view(), name='worker_create'),
     path('display_workers/', display_workers, name = 'display_workers'),
+    #display just the video
+    path('video_feed', video_feed, name='video_feed'),
+    
+    #display video with data of the workers
+    path('stream/', stream, name='stream')
+   
 ]

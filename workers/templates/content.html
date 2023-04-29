@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webcam Video</title>
+    <meta charset="UTF-8" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"  
+      integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="  
+      crossorigin="anonymous" />  
+</head>
+<body>
+    <div id="jumbotron" class="jumbotron" style="text-align: center; margin-top:-50px">  
+        <h1 class="display-4">Workers App </h1>  
+        <h5></h5>  
+      </div>  
+  
+        
+        <a href="{% url 'display_workers' %}">DISPLAY WORKERS</a>
+        <br>
+        <a href="{% url 'video_feed' %}">VIDEO FEED</a>
+        <br>
+        <a href="{% url 'stream' %}">VIDEO FEED WITH DATA</a>
+    
+    
+    
+   
+
+</body>
+</html>
